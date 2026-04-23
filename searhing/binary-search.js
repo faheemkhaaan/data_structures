@@ -18,8 +18,6 @@ function binarySearch(array, target) {
 
     return -1;
 }
-
-
 const array = [2, 3, 5, 7, 8, 11]
 const found = binarySearch(array, 5);
-console.log(found);
+// console.log(found);

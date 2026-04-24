@@ -9,14 +9,13 @@ var isAnagram = function (s, t) {
     const map = new Map();
 
     for (let i = 0; i < s.length; i++) {
-        let current = map.get(s[i]) ?? 0;
-        map.set(s[i], current + 1);
+        let current = map.get(s.charAt(i)) ?? 0;
+        console.log(map)
+        map.set(s.charAt(i), current + 1);
+        map.set(t.charAt(i), current - 1);
     }
-    for (let j = 0; j < t.length; j++) {
-        let current = map.get(t[j]) ?? 0;
-        map.set(t[j], current - 1);
-    }
-    return !map.values().some(value => { return value > 0 });
+    console.log(map)
+    return !map.values().some(a => a > 0)
 };
 
 const s = 'anagram';

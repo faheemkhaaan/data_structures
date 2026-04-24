@@ -13,14 +13,10 @@ function containsDuplicate2(array, k) {
         if (set.has(array[end])) {
             return true
         }
-        if (end - start >= k) {
-            set.delete(array[start]);
-            start++
+        if (end - start > k) {
+            set.delete(array[start])
         }
-        set.add(array[end]);
     }
-    console.log(set);
-    return false;
 }
 const map = new Map();
 

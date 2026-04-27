@@ -9,7 +9,7 @@
 function romanToIntegers(s = "") {
 
     const map = new Map([
-        ['I', 1,],
+        ['I', 1],
         ['V', 5],
         ['X', 10],
         ['L', 50],

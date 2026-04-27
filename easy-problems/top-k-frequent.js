@@ -3,7 +3,7 @@
 
 function topKFrequentElements(nums, k) {
     const result = new Map();
-    const queue = new PriorityQueue((a, b) => { return b.value - a.value });
+    const queue = new PriorityQueue((a, b) => { return a.value - b.value });
 
     for (let i = 0; i < nums.length; i++) {
         if (result.has(nums[i])) {
@@ -85,18 +85,18 @@ class PriorityQueue {
         let rightChildIndex = this.right(index);
         const n = this.array.length;
 
-        let largest = index;
+        let parent = index;
 
-        if (leftChildIndex < n && this.compare(this.array[largest], this.array[leftChildIndex]) > 0) {
-            largest = leftChildIndex;
+        if (leftChildIndex < n && this.compare(this.array[parent], this.array[leftChildIndex]) > 0) {
+            parent = leftChildIndex;
         }
-        if (rightChildIndex < n && this.compare(this.array[largest], this.array[rightChildIndex]) > 0) {
-            largest = rightChildIndex;
+        if (rightChildIndex < n && this.compare(this.array[parent], this.array[rightChildIndex]) > 0) {
+            parent = rightChildIndex;
         }
 
-        if (largest !== index) {
-            this.swap(index, largest);
-            this.sinkDown(largest);
+        if (parent !== index) {
+            this.swap(index, parent);
+            this.sinkDown(parent);
         }
     }
 }
@@ -117,7 +117,7 @@ function heapSort(nums) {
 
 const arr = [4, 2, 63, 2, 34, 5, 43, 6, 6, 7, 6, 8, 4, 3, 53, 4, 34, 53, 2];
 const sorted = heapSort(arr);
-console.log(sorted);
+// console.log(sorted);
 const result = topKFrequentElements(arr, 3);
 
 // console.log(result);

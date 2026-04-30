@@ -30,6 +30,6 @@ var longestConsecutive = function (nums) {
 };
 
 
-const nums = [100, 4, 200, 1, 3, 2];
+const nums = [100, 4, 200, 1, 3, 2, 5, 6];
 const result = longestConsecutive(nums);
 console.log(result)

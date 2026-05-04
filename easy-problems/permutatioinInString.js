@@ -25,11 +25,12 @@ var checkInclusion = function (s1, s2) {
         }
         return true;
     }
-    for (let i = 0; i < s2.length - s1.length; i++) {
+    for (let left = 0; left < s2.length - s1.length; left++) {
         if (matches(s1Count, s2Count)) return true;
-
-        s2Count[getIndex(s2[i + s1.length])]++;
-        s2Count[getIndex(s2[i])]--;
+        const right = left + s1.length;
+        console.log(s2[left], s2[right]);
+        s2Count[getIndex(s2[right])]++;
+        s2Count[getIndex(s2[left])]--;
     }
     return matches(s1Count, s2Count)
 };

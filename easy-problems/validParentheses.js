@@ -7,42 +7,28 @@ var isValid = function (s) {
 
     const stack = [];
 
-    const openingBrackets = new Set([
-        '(', '[', '{'
-    ]);
-    const closingBracket = new Set([
-        ')', ']', '}'
-    ])
     const rules = {
         '(': ")",
         "[": ']',
         "{": "}"
     }
-    let result = false;
+
     for (let i = 0; i < s.length; i++) {
         const current = s[i];
-        const isOpeningBracket = openingBrackets.has(current);
-        const isClosingBracket = closingBracket.has(current);
 
-        if (isOpeningBracket) {
+        if (current in rules) {
             stack.push(current);
-        }
-        // console.log(current)
-        // console.log(isOpeningBracket, isClosingBracket)
-        if (isClosingBracket) {
+        } else {
             const top = stack.pop();
-            if (rules[top] === current) {
-                result = true;
-            } else {
-                result = false;
+            if (rules[top] !== current) {
+                return false;
             }
         }
-
     }
-    return result;
+    return stack.length === 0;
 };
 
-const s = "(){}}{"
+const s = "([]"
 
 const result = isValid(s);
 

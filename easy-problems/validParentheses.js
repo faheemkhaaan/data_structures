@@ -17,6 +17,7 @@ var isValid = function (s) {
         "[": ']',
         "{": "}"
     }
+    let result = false;
     for (let i = 0; i < s.length; i++) {
         const current = s[i];
         const isOpeningBracket = openingBrackets.has(current);
@@ -27,16 +28,16 @@ var isValid = function (s) {
         }
         if (isClosingBracket) {
             const top = stack.pop();
-            if (rules[top] !== current) {
-                return false;
+            if (rules[top] === current) {
+                result = true;
             }
         }
 
     }
-    return true;
+    return result;
 };
 
-const s = "()[]{}";
+const s = "[";
 
 const result = isValid(s);
 

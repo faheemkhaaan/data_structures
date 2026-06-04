@@ -37,7 +37,7 @@ var isValid = function (s) {
     return result;
 };
 
-const s = "[";
+const s = "(){}}{"
 
 const result = isValid(s);
 

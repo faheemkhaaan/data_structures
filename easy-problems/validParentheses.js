@@ -1,3 +1,4 @@
+
 /**
  * @param {string} s
  * @return {boolean}
@@ -26,10 +27,14 @@ var isValid = function (s) {
         if (isOpeningBracket) {
             stack.push(current);
         }
+        // console.log(current)
+        // console.log(isOpeningBracket, isClosingBracket)
         if (isClosingBracket) {
             const top = stack.pop();
             if (rules[top] === current) {
                 result = true;
+            } else {
+                result = false;
             }
         }
 

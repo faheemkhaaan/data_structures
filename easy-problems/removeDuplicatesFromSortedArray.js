@@ -5,17 +5,16 @@
  */
 var removeDuplicates = function (nums) {
 
-    let seen = null;
+    if (nums.length === 0) return 0;
+    let k = 1;
 
-    for (let i = 0; i < nums.length; i++) {
-        if (seen !== nums[i]) {
-            seen = nums[i];
-        } else {
-            nums.splice(i, 1);
-            i--
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] !== nums[i - 1]) {
+            nums[k] = nums[i];
+            k++
         }
     }
-    return nums;
+    return k
 };
 
 

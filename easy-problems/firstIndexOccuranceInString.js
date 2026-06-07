@@ -6,25 +6,26 @@
 var strStr = function (haystack, needle) {
     if (haystack.length === 0) return 0;
 
-    let occurance = -1;
-    let seen = ''
-    for (let i = 0; i < haystack.length; i++) {
+    let occurance = -1
+    let right = 0;
 
-        seen += haystack[i];
-
-        if (seen.length === needle.length) {
-            if (seen === needle) {
-                occurance = needle.length - i - 1
+    for (let left = 0; left <= haystack.length; left++) {
+        console.log(left - right)
+        if (left - right === needle.length) {
+            const seen = haystack.substring(right, left);
+            if (seen !== needle) {
+                occurance = right
             } else {
-                seen = ''
+
+                right++
             }
         }
     }
     return occurance
 };
 
-const haystack = "leetcode";
-const needle = "leeto";
+const haystack = "leetcode"
+const needle = "leeto"
 const result = strStr(haystack, needle);
 
 console.log(result);

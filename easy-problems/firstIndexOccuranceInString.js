@@ -10,11 +10,10 @@ var strStr = function (haystack, needle) {
     let right = 0;
 
     for (let left = 0; left <= haystack.length; left++) {
-        console.log(left - right)
         if (left - right === needle.length) {
             const seen = haystack.substring(right, left);
-            if (seen !== needle) {
-                occurance = right
+            if (seen === needle) {
+                return occurance = right
             } else {
 
                 right++

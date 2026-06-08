@@ -55,6 +55,6 @@ left = mid+1 = 3+1 = 4
 
 */
 
-const nums = [1, 3, 5, 6], target = 7
+const nums = [1, 3, 5, 6], target = 2
 const result = searchInsert(nums, target);
 console.log(result)

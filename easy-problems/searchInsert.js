@@ -7,23 +7,17 @@ var searchInsert = function (nums, target) {
 
     let left = 0;
     let right = nums.length - 1;
-    let searchPosition = 0;
-    while (left < right) {
+    while (left <= right) {
 
         const mid = Math.floor((left + right) / 2);
-        if (nums[mid] === target) {
-            searchPosition = mid;
-        }
 
         if (nums[mid] < target) {
             left = mid + 1;
-            searchPosition = mid
         } else {
             right = mid - 1;
-            searchPosition = mid
         }
     }
-    return searchPosition;
+    return left;
 
 };
 

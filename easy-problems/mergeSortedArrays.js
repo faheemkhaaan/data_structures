@@ -6,7 +6,7 @@
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
 var merge = function (nums1, m, nums2, n) {
-
+    if (m === 0) nums1[0] = nums2[0]
     let p = m + n - 1;
 
     let p1 = m - 1;

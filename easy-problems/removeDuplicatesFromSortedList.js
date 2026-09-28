@@ -21,7 +21,6 @@ function ListNode(val, next) {
  */
 var deleteDuplicates = function (head) {
     if (!head) return;
-
     let current = head;
 
     while (current && current.next) {
@@ -31,11 +30,8 @@ var deleteDuplicates = function (head) {
             current = current.next;
         }
     }
-    return head
+    return head;
 };
-
-
-
 
 
 

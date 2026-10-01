@@ -7,7 +7,8 @@
  */
 function groupAnagram(strs) {
 
-    if (strs.length === 0) return [[strs[0]]]
+    if (strs.length === 0) return []
+
     const map = new Map();
     const getKey = (word) => {
         const key = new Int8Array(26);
